@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>关键帧</title>
+  <style type="text/css">
+  body{
+    background: pink;
+  }
+  h3{
+    color: white;
+  }
+   @keyframes translatea{
+    0%{
+      -webkit-transform:translate(0,0)
+    }
+    
+    50%{
+      -webkit-transform:translate(200px,0)
+    }
+    
+    90%{
+      -webkit-transform:translate(200px,200px);
+    }
+    100%{
+      -webkit-transform:translate(100px,200px);
+    }
+  }
+  @keyframes around{
+  0% {
+    transform: rotateX(0);
+  }
+  25%{
+    transform: rotateX(90deg);
+  }
+  50%{
+     transform: rotateX(180deg); 
+  }
+  75%{
+    transform:rotateX(270deg);
+  }
+  99%{
+    transform: translateX(355deg);
+  }
+  100%{
+    transform: translateX(360deg);
+  }
+}
+  div{
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    -webkit-transform-style: preserve-3d;
+    -webkit-animation-name: none;
+    -webkit-animation-duration: 5s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-iteration-count:infinite;
+  animation-direction: alternate;
+  /*-webkit-animation-fill-mode:backwards;*/
+
+    
+  }
+ 
+  </style>
+</head>
+<body>
+<h3>@keyframes name{ 0{} 100%{}}</h3>
+<h3>注意书写格式 百分号后面不需要分号；百分号之间也不需要分号</h3>
+<div class="box">3d旋转</div>
+<button>aaa</button>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript">
+  $(function(){
+    $('button').on('click',function(){
+      $('.box').css('animationName','around')
+    })
+  })
+</script>
+</body>
+</html>

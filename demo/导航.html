@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>阴影</title>
+  <style type="text/css">
+  body{
+    background: pink;
+  }
+  h3{
+    color: white;
+  }
+
+  .main{
+    width: 500px;
+    height: 300px;
+    border: 2px solid #ccc;
+    position: relative;
+    -webkit-perspective: 800px;
+    -webkit-perspective-origin: 100px 55px;
+    -webkit-transform-style: preserve-3d;
+  }
+  .main div{
+    width: 200px;
+    height: 200px;
+    background: #000;
+    color:#fff;
+    position: absolute;
+    margin:20px auto;
+    -webkit-transform-origin: bottom center;
+    -webkit-transform-style: preserve-3d;
+    font-size: 100px;
+  }
+.page1{
+  transition: transform 2s ease;
+}
+.page2,.page3,.page4,.page5,.page6{
+  transition: transform 2s ease;
+  transform:rotateX(90deg);
+}
+
+  </style>
+</head>
+<body>
+<h3>1.要有一个外层元素设置perspective:mpx;perspective-origin:50px 50px ;透视中心点(眼睛在哪里)</h3>
+<h3>2.要对所有需要实现3d效果的元素都设置trsnaform:preserve-3d;</h3>
+<div class="main">
+<div class="page1">1</div>
+<div class="page2">2</div>
+<div class="page3">3</div>
+<div class="page4">4</div>
+<div class="page5">5</div>
+<div class="page6">6</div>
+
+</div>
+<hr>
+  <button class="next">下一个</button>
+  <button class="pre">前一个</button>
+
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript">
+  $(function(){
+    var current=1;
+    $('.next').on('click',function(){
+      $('.page'+current).css('transform','rotateX(-90deg)');
+      current++;
+      $('.page'+current).css('transform','rotateX(0deg)');
+    })
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>阴影</title>
+  <style type="text/css">
+  body{
+    background: pink;
+  }
+  h3{
+    color: white;
+  }
+  div{
+    width: 100px;
+    height: 100px;
+    background: #fff;
+  }
+  .box1{
+    height: 200px;
+    transform:translate(50%,50%);
+  }
+  .box2{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+  }
+  </style>
+</head>
+<body>
+<h3>translate(x,y);translateX();translateY(y);</h3>
+<h3>如果是百分比的话，记住<cite>相对于自己的宽高进行，如自己的height是200px，translateY(50%),就是平移100px</cite></h3>
+<div></div>
+<div class="box1"></div>
+<hr>
+<h3>所以可以应用垂直水平居中</h3>
+<div class="box2">水平垂直居中</div>
+</body>
+</html>

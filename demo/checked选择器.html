@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>文字模糊</title>
+	<style type="text/css">
+	body{
+		background: pink;
+	}
+	h3{
+		color: #fff;
+	}
+	div{
+		width: 100px;
+		height: 100px;
+		background:blue;
+		display: inline-block;
+		border-radius: 100%;
+		position: relative;
+		
+	}
+	span{
+		width: 50px;
+		height: 50px;
+		background:white;
+		display: inline-block;
+		border-radius: 100%;
+		position: absolute;
+		top:25px;
+		left: 25px;
+	}
+
+	input{
+		position: relative;
+		width: 100%;
+		height: 100%;
+		z-index: 100;
+		/*visibility: hidden;*/
+		opacity: 0
+	}
+	input:checked+span{
+background:red;
+	}
+	</style>
+</head>
+<body>
+<div class="box1"><input type="radio" name="sex" id="boy"><span></span></div><label for="boy">男</label>
+<div class="box2"><input type="radio" name="sex" id="girl"><span></span></div><label for="girl">女</label>
+<h3>1.给input[radio]设置id, 使用label的for属性可以将他们绑定</h3>
+<h3>2.可以通过 input:checked 方法在选中的状态下 设置具体属性。</h3>
+<h3>3.[title^=你好] 以你好开头，$以你好结束，*存在你好</h3>
+</body>
+</html>

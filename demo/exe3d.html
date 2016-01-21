@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>阴影</title>
+  <style type="text/css">
+  body{
+    background: pink;
+  }
+  h3{
+    color: white;
+  }
+ .main{
+   width: 500px;
+   height: 400px;
+   margin:20px auto;
+   border:5px solid red;
+   -webkit-perspective-origin: 250px 10px;
+   perspective:1000px;
+   -webkit-transform-style: preserve-3d;
+ }
+ .box{
+  width: 200px;
+  height: 200px;
+ }
+ .g{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 50px auto;
+  border:2px solid red;
+   -webkit-transform-style: preserve-3d;
+   transition: transform 1s ease;
+  -webkit-transform-origin: bottom;
+ }
+ .top{
+   background:blue;
+   position: absolute;
+   -webkit-transform-style: preserve-3d;
+   -webkit-transform-origin: bottom;
+   transform:  translateY(-200px) rotateX(90deg);
+ }
+ .font{
+  background: orange;
+  position: absolute;
+   -webkit-transform-style: preserve-3d;
+   
+ }
+ .back{
+  background: green;
+  position: absolute;
+   -webkit-transform-style: preserve-3d;
+   transform:translateZ(-200px);
+ }
+ .bottom{
+  background: #ccc;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform-origin: bottom;
+  transform:rotateX(90deg);
+ }
+ 
+  </style>
+</head>
+<body>
+<h3></h3>
+<div class="main">
+<div class="g">
+<div class="back box"></div>
+<div class="bottom box"></div>
+   <div class="top box"></div>
+<div class="font box"></div>
+
+</div>
+ 
+</div>
+<button>按钮</button>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript">
+  $(function(){
+    var x=0;
+    $('button').on('click',function(){
+      x-=90;
+      $('.g').css('transform','rotateX('+x+'deg)')
+    });
+    
+    
+    var z=6;
+    function b(){
+      return 8;
+    }
+  var m=  z && b();
+  console.log(m)
+  })
+</script>
+</body>
+</html>

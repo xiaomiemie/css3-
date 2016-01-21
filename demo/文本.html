@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>阴影</title>
+  <style type="text/css">
+  body{
+    background: pink;
+  }
+  h3{
+    color: white;
+  }
+  div{
+    width: 100px;
+    height: 100px;
+    background: #fff;
+  }
+  .box{
+    text-overflow:ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .box2{
+    width: 90px;
+    word-wrap: break-word;
+  }
+  </style>
+</head>
+<body>
+<h3>text-overflow:clip || ellipsis用来设置是否使用省略号，但是他需要overflow:hidden;white-space:nowrap;配合</h3>
+<h3>正常的说，上面那一串文字是会换行的</h3>
+<pre>
+    .box{
+    text-overflow:ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+</pre>
+<div class="box">我们都有一个价名字叫中国</div>
+<hr>
+<h3> 不常用！word-wrap:normal || break-word 控制文本换行的形式，一个是空间不足一个字，
+留空换行，，一个是强制截取字换行</h3>
+<div class="box2">我们都有一个价名字叫中国</div>
+</body>
+</html>

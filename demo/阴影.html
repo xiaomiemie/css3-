@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>阴影</title>
+  <style type="text/css">
+  body{
+    background: pink;
+  }
+  h3{
+    color: white;
+  }
+  div{
+    width: 100px;
+    height: 100px;
+    background: #fff;
+  }
+  .box1{
+    box-shadow: 5px 5px 10px #000;
+  }
+  .box2{
+    box-shadow: 0 0 10px #000 inset;
+  }
+  </style>
+</head>
+<body>
+<h3>box-shadow：x轴偏移，y轴偏移,[阴影模糊半径]，[阴影扩展半径],[阴影颜色默认黑色],[投影方式inset]</h3>
+<h3>模糊半径是正数，0表示没有阴影，值越大，越模糊</h3>
+<pre>  
+.box1{
+    box-shadow: 5px 5px 10px #000; //使用的是模糊半径
+  }</pre>
+<div class="box1"></div>
+<hr>
+<div class="box2"></div>
+</body>
+</html>

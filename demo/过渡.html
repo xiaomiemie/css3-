@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>过渡</title>
+  <style type="text/css">
+  body{
+    background: pink;
+  }
+  h3{
+    color: white;
+  }
+  div{
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    transition:background 5s ease ;
+  }
+  .c{
+    background: green;
+  }
+  </style>
+</head>
+<body>
+<h3>过渡动画： transition 他是一个复合属性。可以把它拆分成：transition-property,transition-duration,transition-timing-function,transition-delay</h3>
+<h3>时间是要注上单位的 eg:5s</h3>
+<h3>过渡函数：transition-timing-function:ease (速度由快变慢) | ease-in(速度变快) | ease-out | ease-in-out | linear</h3>
+<h3>多个属性值一起，中间用,号隔开即可</h3>
+<div class="box"></div>
+
+
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript">
+  $(function(){
+    $('.box').on('mouseover',function(){
+      // $(this).css('background','red')
+      $(this).addClass('c');
+    }).on('mouseout',function(){
+      $(this).removeClass('c')
+    })
+  })
+</script>
+</body>
+</html>

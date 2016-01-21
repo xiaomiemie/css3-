@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>阴影</title>
+  <style type="text/css">
+  body{
+    background: pink;
+  }
+  h3{
+    color: white;
+  }
+  .main{
+    width: 500px;
+    height: 300px;
+    border:2px solid #ccc;
+    -webkit-perspective: 800px;
+    -webkit-perspective-origin: 100px 100px;
+  }
+  .out{
+    border:5px solid blue;
+    -webkit-transform-style: preserve-3d;
+    transition: transform 2s ease;
+    position: relative;
+  }
+  .back{
+    width: 200px;
+    height: 200px;
+        position: absolute;
+    top:0;
+    left: 0;
+    background: orange;
+    -webkit-transform-style: preserve-3d;
+  
+  }
+  .font{
+     width: 200px;
+    height: 200px;
+    background-image: url(me.gif);
+    background-size: cover;
+    -webkit-transform-style: preserve-3d;
+    position: absolute;
+    top:0;
+    left: 0;
+  
+    
+    
+  }
+  </style>
+</head>
+<body>
+<h3></h3>
+<div class="main">
+  <div class="out">
+    <div class="back">back</div>
+    <div class="font">font</div>
+  </div>
+  
+  <hr>
+  <div class="box1 box"></div>
+  <div class="box2 box"></div>
+</div>
+
+
+<button>反转</button>
+
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript">
+  $(function(){
+    $('button').on('click',function(){
+      $('.out').css('transform','rotateY(180deg)')
+    })
+    
+    $('.out').hover(function(){
+      $('.out').css('transform','rotateY(180deg)');
+  
+      
+      $('.font').css('opacity',0);
+    },function(){
+      $('.font').css('opacity',1);
+      $('.out').css('transform','rotateY(0deg)');
+    })
+  })
+</script>
+</body>
+</html>
