@@ -1,0 +1,109 @@
+ *{
+    margin: 0;
+    padding: 0;
+  }
+  html,body{
+    height: 100%;
+    width: 100%;
+  }
+  .content{
+    width:100%;
+    height: 80%;
+    /*border:1px solid #000;*/
+    margin: 20px auto;
+    overflow: hidden;
+    position: relative;
+    
+  }
+  .content-wrap{
+    /* overflow: hidden;*/
+    width:100%;
+    height: 100%;
+   
+    position: relative;
+    transition: transform 20s ease;
+  }
+  .content-wrap li{
+        background: #CAE1FF;
+        color: red;
+        /*float: left;*/
+         border:5px solid orange;
+        overflow: hidden;
+        position: absolute;
+        
+  }
+  .content-wrap li:nth-child(2){
+    background:#ccc;
+  }
+  .content-wrap li:nth-child(3){
+    background:#000;
+  }
+  #boy{
+    width:151px;
+    height: 291px;
+    background: url('images/p/person/boy-walk.png') no-repeat;
+    position: absolute;
+    left:6%;
+     -webkit-animation-name: boywalk; 
+    /*规定动画完成一个周期所花费的秒或毫秒。默认是 0*/
+    -webkit-animation-duration: 950ms;
+    /*规定动画被播放的次数。默认是 1。 infinite(循环播放)*/
+    -webkit-animation-iteration-count: infinite;
+    /*动画切换的方式是一帧一帧的改变*/
+    -webkit-animation-timing-function: steps(1, start);
+    -moz-animation-name: boywalk;
+    -moz-animation-duration: 950ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: steps(1, start)
+    
+  }
+  
+  @keyframes boywalk{
+    0% {
+            background-position: 0 0;
+        }
+        25% {
+            /*background-position: -602px -0px;*/
+            background-position: -151px 0;
+        }
+        50% {
+            /*background-position: -302px -291px;*/
+            background-position: -302px 0;
+        }
+        75% {
+            /*background-position: -151px -291px;*/
+            background-position: -452px 0;
+        }
+        100% {
+            /*background-position: -0px -291px;*/
+            background-position: 0px 0;
+        }
+  }
+  
+.a_background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.a_background_top{
+    width: 100%;
+    height: 71.6%;
+    background-image: url("images/background/a_background_top.png");
+    background-size: 100% 100%;
+}
+
+
+.a_background_middle{
+    width: 100%;
+    height: 13.1%;
+    background-image: url("images/background/a_background_middle.png");
+    background-size: 100% 100%;
+}
+
+.a_background_botton{
+    width: 100%;
+    height: 15.3%;
+    background-image: url("images/background/a_background_botton.png");
+    background-size: 100% 100%;
+}
