@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style>
+  *{
+    margin:0;
+    padding: 0;
+    font-family: 'Microsoft Yahei';
+
+  }
+  body{
+    background: #55dd88;
+  }
+  .content{
+    width:500px;
+    height:500px;
+    margin: 20px auto;
+  }
+  .yy-select{
+    width: 200px;
+    background: #ffffff;
+    position: relative;
+  }
+  .yy-select p{
+     height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    text-indent: 10px
+  }
+  .yy-select ul{
+    list-style: none;
+    max-height: 0;
+    overflow: hidden;
+
+    transition:max-height .2s ease;
+  }
+  .yy-select ul li{
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    text-indent: 10px
+  }
+   .yy-select ul li:hover{
+    background: #e0e0e0;
+   }
+   .yy-selected{
+     background: #3D9CFB;
+   }
+  .yy-select:after{
+    content:'';
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-left:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    position: absolute;
+    top:11px;
+    right: 11px;
+    transform:rotate(-45deg);
+    transition:transform .1s ease-in;
+    
+  }
+    .yy-open ul{
+      max-height: 200px;
+      animation: selectdown .2s ease;
+    }
+    
+  .yy-open:after{
+    transform:rotate(-225deg);
+    top:18px;
+  }
+  @keyframes selectdown{
+    0{
+      transform:scaleY(0);
+    }
+    20%{
+      transform:scaleY(0.2);
+    }
+    40%{
+      transform:scaleY(0.4);
+    }
+    60%{
+      transform:scaleY(0.6);
+    }
+    80%{
+      transform:scaleY(0.8);
+    }
+    100%{
+      transform:scaleY(1.0);
+    }
+   
+  }
+  </style>
+</head>
+<body>
+<p>总结：1.对于两种状态的设置，可以动态增加删除一个class来切换。2.灵活使用:after</p>
+<div class="content">
+  <div class="yy-select">
+    <p class="yy-content">所有选项</p>
+    <ul>
+      <li data-value='所有选项' class="yy-selected">所有选项</li>
+      <li data-value='html'>html</li>
+      <li data-value='css'>css</li>
+      <li data-value='javascript'>javascript</li>
+      <li data-value='jquery'>jquery</li>
+    </ul>
+  </div>
+</div>
+
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript">
+  $(function(){
+    var selectBox=$('.yy-select')
+    $('.yy-content').on('click',function(){
+       selectBox.toggleClass('yy-open');
+    });
+    $('.yy-select ul').on('click','li',function(e){
+      var data=$(this).data('value');
+      $('.yy-content').html(data);
+      $(this).siblings().removeClass('yy-selected')
+      $(this).addClass('yy-selected')
+      selectBox.removeClass('yy-open');
+      
+    })
+  })
+</script>
+</body>
+</html>
